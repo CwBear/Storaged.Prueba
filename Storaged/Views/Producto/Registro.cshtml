@@ -1,0 +1,37 @@
+﻿@model Storaged.Models.ViewModels.ProductoViewModel
+@{
+    ViewBag.Title = "Registro";
+}
+
+    <h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Registro", "Producto", FormMethod.Post))
+{
+    <div class="row">
+        <div style="text-align:right">
+            <a href="~/Producto/index" class="btn btn btn-primary">Volver al Catalogo</a>
+        </div>
+        <div class="col-md-12">
+            <div>
+                @Html.LabelFor(d => d.Nombre)
+                @Html.TextBoxFor(d => d.Nombre, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Nombre, null, new { @class = "alert" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.Cantidad)
+                @Html.TextBoxFor(d => d.Cantidad, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Cantidad, null, new { @class = "alert" })
+            </div>
+            <div>
+                @Html.LabelFor(d => d.Precio)
+                @Html.TextBoxFor(d => d.Precio, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Precio, null, new { @class = "alert" })
+            </div>
+            <div>
+                <input value="Guardar" class="btn btn-primary" type="submit" />
+            </div>
+        </div>
+
+    </div>
+}
+
