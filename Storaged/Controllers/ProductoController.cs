@@ -113,7 +113,7 @@ namespace Storaged.Controllers
             }
             return Redirect("~/Producto/");
         }
-        private int ContadorRegistros()
+        public int ContadorRegistros()
         {
             using (patronEntities bd = new patronEntities())
             {
